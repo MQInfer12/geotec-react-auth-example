@@ -1,7 +1,7 @@
 # Geotec React Auth Ejemplo
 
-Para instalar la librería utilizar el comando
+## Paquete
 
-```
-npm i geotec-react-auth
-```
+Paquete de npm en el siguiente enlace:
+
+[geotec-react-auth](https://www.npmjs.com/package/geotec-react-auth)
