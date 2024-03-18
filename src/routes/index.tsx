@@ -10,9 +10,9 @@ const Index = () => {
       login: "admin",
       password: "123456",
     };
-    const correct = await login(body);
-    if (!correct) {
-      return alert("Login failed");
+    const res = await login(body);
+    if (res.status === "error") {
+      return alert(res.message);
     }
     navigate("/home");
   };

@@ -11,11 +11,11 @@ const Register = () => {
   });
 
   const handleRegister = async () => {
-    const success = await register(form);
-    if (!success) {
-      return alert("Registration failed");
+    const res = await register(form);
+    if (res.status === "error") {
+      return alert(res.message);
     }
-    alert("Registration successful");
+    alert(res.message);
   };
 
   return (

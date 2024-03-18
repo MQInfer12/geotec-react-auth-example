@@ -4,10 +4,11 @@ import Index from "./routes";
 import Home from "./routes/home";
 import { AuthContext, AuthGuard } from "geotec-react-auth";
 import Register from "./routes/register";
+import Password from "./routes/password";
 
 function App() {
   return (
-    <AuthContext projectCluster="ERP" version="v1">
+    <AuthContext projectCluster="ERP" version="v1" logoutRoute="/">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -15,8 +16,16 @@ function App() {
           <Route
             path="/home"
             element={
-              <AuthGuard loader={<p>Cargando...</p>} redirectTo="/">
+              <AuthGuard loader={<p>Cargando...</p>}>
                 <Home />
+              </AuthGuard>
+            }
+          />
+          <Route
+            path="/password"
+            element={
+              <AuthGuard loader={<p>Cargando...</p>}>
+                <Password />
               </AuthGuard>
             }
           />
